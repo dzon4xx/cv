@@ -1,0 +1,10 @@
+body {
+  background-color: grey;
+}
+div#main {
+  width: 21cm;
+  background-color: white;
+  margin: auto;
+  padding: 1.6em;
+  font-family: "Times New Roman", Times, serif;
+}

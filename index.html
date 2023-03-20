@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jan Pleszyński</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="print" href="print.css">
+
+
+    <style>
+        body {
+            color: #292f33;
+            background: white;
+            font-family: 'Rubik', sans-serif;
+            font-size-adjust: 1.2;
+            line-height: 1.5em !important;
+
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        a {
+            color: #292f33;
+        }
+
+        footer {
+            font-size: 0.7em;
+            font-style: oblique;
+        }
+
+        a:hover {
+            font-weight: bold;
+        }
+
+        hr {
+            border-color: #dddddd;
+            margin-right: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        #cv-outer {
+            width: 210mm;
+            margin: 2rem auto;
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            background: white;
+
+        }
+
+        #cv-inner {
+        }
+
+        aside {
+            border-left: 1px solid #ddd;
+            grid-row: 3 / 4;
+            grid-column: 2 / 3;
+            padding: 0 1rem;
+        }
+
+
+        #main {
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+            padding: 0 1rem;
+        }
+
+        #contact-wrapper {
+            grid-row: 2 / 3;
+            grid-column: 1 / 3;
+            padding: 0 1rem;
+        }
+
+        #about {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            padding: 0 1rem;
+        }
+
+
+        #photo img {
+            float: right;
+        }
+
+        #main-info {
+            /*display: flex;*/
+        }
+
+        #name {
+            font-size: 2.5rem;
+            margin-top: 0px;
+            margin-bottom: 0.5rem;
+        }
+
+        #contact {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+
+        }
+
+        #contact div:first-child {
+            margin-left: 0.3rem;
+        }
+
+        #contact i {
+            transform: scale(1.5);
+        }
+
+        #contact span {
+            margin-left: 1rem;
+        }
+
+        #motto {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-style: oblique;
+        }
+
+        #skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .skills-box {
+
+        }
+
+        .aside-section {
+            margin-bottom: 1rem;
+        }
+
+        .aside-section .section-header {
+            margin-bottom: 0.5rem;
+        }
+
+        .starred-item {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .stars i {
+            margin-left: 3px;
+            transform: skewX(-25deg);
+        }
+
+        .stars {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-grow: 2;
+        }
+
+        .section-header {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-header span {
+            background: #fff;
+            padding-right: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /*.section-header:before {*/
+        /*background: #ddd;*/
+        /*content: "";*/
+        /*display: block;*/
+        /*height: 1px;*/
+        /*position: absolute;*/
+        /*top: 50%;*/
+        /*width: 100%;*/
+        /*}*/
+
+        .section-header:before {
+            left: 0;
+        }
+
+        .stars i.checked {
+            color: #00b000;
+        }
+
+        .stars i:not(.checked) {
+            color: #dddddd;
+        }
+
+        ul.job {
+            padding-left: 0px;
+        }
+
+        ul.job li {
+            padding-left: 1rem;
+            margin-bottom: 1.2em;
+            list-style-type: none;
+        }
+
+
+        ul.job li:nth-child(even) {
+            border-left: solid 2px #00b000
+        }
+
+        ul.job li:nth-child(odd) {
+            border-left: solid 2px #0051ff
+        }
+
+        ul.inline-list {
+            list-style: square;
+            padding-left: 0;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul.inline-list li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        ul.inline-list li {
+            display: inline-block;
+        }
+
+
+        ul li.starred-item {
+            list-style-type: none;
+        }
+
+        /*Work experience*/
+
+        .company {
+            margin-bottom: 0.4em;
+            font-size: 1.2em;
+        }
+
+        .position {
+            color: #4d555a;
+            font-weight: bolder;
+        }
+
+        .company-name {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .work-date-range {
+            margin-top: 0.5em;
+        }
+
+        .work-date-range .fa-calendar {
+            margin-right: 1rem;
+        }
+
+        .work-date-range .fa-long-arrow-right {
+            transform: scale(0.7);
+            margin: auto 1rem;
+        }
+
+        .task-description {
+            /*line-height: 1.6;*/
+        }
+
+
+        .about-project {
+            text-indent: 1em;
+        }
+
+
+        @media print {
+            #cv-outer {
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+            }
+
+            #cv-inner {
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="cv-outer">
+    <div id="cv-inner">
+        <div id="about">
+            <section>
+                <div id="main-info">
+                    <h1 id="name">Jan Pleszyński</h1>
+                    <span class="company-name">Python developer</span>
+                    <span class="position">with frontend skills</span>
+                </div>
+                <div id="motto">Dedicated engineer with a proven track record in various roles, skilled in
+                    problem-solving, teamwork, and taking calculated risks. Proficient in OOP, TDD, and DDD, and known
+                    for reliability and professionalism.
+                </div>
+            </section>
+        </div>
+
+        <div id="contact-wrapper">
+            <section>
+                <h2 class="section-header"><span>Contact</span></h2>
+                <div id="contact">
+                    <div><i class="fa fa-envelope-o"></i><span>janpleszynski@gmail.com</span></div>
+                    <div><i class="fa fa-mobile"></i><span>793 653 355</span></div>
+                    <div><i class="fa fa-home"></i><span>Warsaw Poland</span></div>
+                </div>
+            </section>
+        </div>
+
+        <div id="main">
+
+            <section id="work-experience">
+                <h2 class="section-header"><span>Work experience</span></h2>
+                <ul class="job">
+                    <li>
+                        <div class="company">
+                            <span class="company-name">STX Next</span>&nbsp;&nbsp;<span class="position">as Python developer</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>October 2021<i
+                                    class="fa fa-long-arrow-right"></i>April 2022
+                            </div>
+                        </div>
+                        About project
+                        <p class="about-project">
+                            Contributed to the development of a sophisticated communication platform designed to
+                            facilitate networking and collaboration between students at MBA schools. The platform
+                            features robust networking and chat capabilities that are specifically tailored to the
+                            needs of MBA students seeking to establish meaningful relationships with one another. By
+                            providing a solid foundation for communication on various topics of common interest, the
+                            platform has been instrumental in promoting collaboration and knowledge-sharing among
+                            users.</p>
+
+                        Duties
+                        <p class="task-description">
+                            Designing and implementing a robust polling feature, integrated into the core chat
+                            functionality, to facilitate efficient and effective decision-making among users on a
+                            variety of topics
+                        </p>
+                        <p class="task-description">
+                            Designing and implementing a payment link feature, integrated into the core chat
+                            functionality, to allow for seamless financial transactions between users
+                        </p>
+                        <p class="task-description">
+                            Developing a saved messages feature, to enable users to easily access and review important
+                            communications
+                        </p>
+                        <p class="task-description">
+                            Designing and implementing a live message preview feature, visible on the chat list, to
+                            provide users with an easy-to-use and streamlined messaging experience
+                        </p>
+                        <p class="task-description">
+                            Conducting debugging and troubleshooting efforts to address memory leaks, ensuring the
+                            smooth and reliable functioning of the platform
+                        </p>
+                    </li>
+                    <li>
+                        <div class="company">
+                            <span class="company-name">Range Tech</span>&nbsp;&nbsp;<span class="position">as Fullstack developer</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>July 2018<i
+                                    class="fa fa-long-arrow-right"></i>Now
+                            </div>
+                        </div>
+                        <p class="task-description">
+                            Created and maintained Range Tech shooting range automation system, which has been deployed
+                            to 17 locations.
+                        </p>
+                        <p class="task-description">
+                            Defined and implemented serial protocol for communication with in-house developed
+                            electronic boards. The protocol proved itself to be flexible to handle unforeseen
+                            requirements. Furthermore it provided error free communication.
+                        </p>
+                        <p class="task-description">
+                            Proposed and implemented mechanism to extend system's functionality using visually
+                            programmable process flow diagrams.
+                        </p>
+                        <p class="task-description">
+                            Unified production and local environments using docker.
+                        </p>
+                        <p class="task-description">
+                            Supported on-site crew during system implementation.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="company">
+                            <span class="company-name">Indigobird</span>&nbsp;&nbsp;<span class="position">as Python/Indigo developer</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>July 2019<i
+                                    class="fa fa-long-arrow-right"></i>November 2019
+                            </div>
+                        </div>
+                        <p class="task-description">
+                            Sniffed Siemens's s7 protocol using wireshark.
+                        </p>
+                        <p class="task-description">
+                            Implemented MES system for client using Indigo framework.
+                        </p>
+                    </li>
+
+                    <li>
+                        <div class="company">
+                            <span class="company-name">Straal</span>&nbsp;&nbsp;<span class="position">as Python developer</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>October 2018<i
+                                    class="fa fa-long-arrow-right"></i>June 2019
+                            </div>
+                        </div>
+                        <p class="task-description">
+                            Created domain specific language for subscription payments processing.
+                        </p>
+                        <p class="task-description">
+                            Maintained, fixed and tested a large distributed python web application.
+                        </p>
+                    </li>
+
+                    <li>
+                        <div class="company">
+                            <span class="company-name">eStoreMedia</span>&nbsp;&nbsp;<span class="position">as Django developer</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>June 2017<i
+                                    class="fa fa-long-arrow-right"></i>July 2018
+                            </div>
+                        </div>
+
+                        <p class="task-description">
+                            Implemented translation infrastructure for storing information about products in multiple
+                            languages.
+                        </p>
+                        <p class="task-description">
+                            Implemented assets system, which stores common data for products.
+                        </p>
+
+                        <p class="task-description">
+                            Implemented export configurator of products' data.
+                        </p>
+
+                        <p class="task-description">
+                            Various data migrations, exports and imports.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="company">
+                            <span class="company-name">TiVo</span>&nbsp;&nbsp;<span class="position">as Python developer</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>October 2016<i
+                                    class="fa fa-long-arrow-right"></i>June 2017
+                            </div>
+                        </div>
+
+                        <p class="task-description">
+                            Created regex tool for static analysis of C code. The tool is integrated with Jenkins
+                            CI build system.
+                        </p>
+                        <p class="task-description">
+                            Created library for connection to REST Cubiware middleware server.
+                            It allows to write simple test scripts sending random malformed data.
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <div class="company">
+                            <span class="company-name">Anfa Kable</span>
+                            <span class="position">as Embedded software developer, Eletronic designer</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>September 2014<i
+                                    class="fa fa-long-arrow-right"></i>June 2016
+                            </div>
+                        </div>
+                        <p class="task-description">
+                            Created <a
+                                href="https://www.youtube.com/watch?v=Z7VvjViKQB0">intelligent home system</a>
+                            based on PLC driver and
+                            Modbus slaves.
+                            Designed, programmed and manufactured slave boards.
+                        </p>
+                        <p class="task-description">
+                            Redesign of Shooting range system in Police Academy in Szczytno.
+                            The system enables to position and rotate shooting target from tablet.
+                        </p>
+                        <p class="task-description">
+                            Designed and programmed device controlling temperature and humidity in cases of
+                            external TV displays.
+                        </p>
+                        <p class="task-description">
+                            Designed and programmed a driver for controlling <a
+                                href="https://www.youtube.com/watch?v=YPWVWHmyQSA">Quantum of Peace</a> display in
+                            Warsaw Uprising
+                            Museum.
+                        </p>
+                    </li>
+
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="section-header"><span>Education</span></h2>
+                <ul class="job">
+                    <li>
+                        <div class="company">
+                            <span class="company-name">Warsaw University of Technology</span> <span class="position"> at Power Engineering faculty</span>
+                            <div class="work-date-range"><i class="fa fa-calendar"></i>October 2011<i
+                                    class="fa fa-long-arrow-right"></i>February 2015
+                            </div>
+                        </div>
+                        <p class="task-description">
+                            Bachelor of Power Plant Systems and Installations.
+                        </p>
+                        <p class="task-description">
+                            Team Leader of the <a href="https://www.youtube.com/watch?v=idE8nGmRAiQ">Gas Turbine System
+                            project</a>. Designed and implemented automation and
+                            measurement systems.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section id="skills">
+                <div class="skills-box">
+                    <h2 class="section-header"><span>Programing Languages and frameworks</span></h2>
+                    <ul class="inline-list">
+                        <li class="starred-item">
+                            <span>Python</span>
+                            <span class="stars">
+                        <i class="fa fa-square checked"></i>
+                        <i class="fa fa-square checked"></i>
+                        <i class="fa fa-square checked"></i>
+                        <i class="fa fa-square checked"></i>
+                        <i class="fa fa-square checked"></i>
+                    </span>
+                        </li>
+                        <li class="starred-item">
+                            <span>Vuejs</span>
+                            <span class="stars">
+                        <i class="fa fa-square checked"></i>
+                        <i class="fa fa-square checked"></i>
+                        <i class="fa fa-square checked"></i>
+                        <i class="fa fa-square"></i>
+                        <i class="fa fa-square"></i>
+                    </span>
+                        </li>
+                        <li class="starred-item">
+                            <span>Django</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+                        <li class="starred-item">
+                            <span>Asyncio</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+                        <li class="starred-item">
+                            <span>Pytest</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+                        <li class="starred-item">
+                            <span>SQL Alchemy</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="section-header"><span>Technologies</span></h2>
+                    <ul class="inline-list">
+                        <li class="starred-item">
+                            <span>Linux</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+
+                        <li class="starred-item">
+                            <span>GIT</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+
+                        <li class="starred-item">
+                            <span>Docker</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+
+                        <li class="starred-item">
+                            <span>RabbitMQ</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+
+                        <li class="starred-item">
+                            <span>Nginx</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+
+                        <li class="starred-item">
+                            <span>Redis</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills-box">
+                    <h2 class="section-header"><span>Tools</span></h2>
+                    <ul class="inline-list">
+                        <li class="starred-item">
+                            <span>Pycharm</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                </span>
+                        </li>
+                        <li class="starred-item">
+                            <span>GitLab</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills-box">
+                    <h2 class="section-header"><span>Languages</span></h2>
+                    <ul class="inline-list">
+                        <li class="starred-item">
+                            <span>Polish (native)</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                </span>
+                        <li class="starred-item">
+                            <span>English (C1)</span>
+                            <span class="stars">
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square checked"></i>
+                <i class="fa fa-square"></i>
+                </span>
+                    </ul>
+                </div>
+
+            </section>
+
+            <footer>
+                I hereby declare that all the facts and information provided for this cover letter
+                and CV are true. I allow my personal data stated in the abovementioned applications
+                to be processed for the purpose of recruitment, in accordance with the Personal
+                Data Protection Act dated 29/08/1997 (Dz.Ust.No.133, item 883).
+            </footer>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

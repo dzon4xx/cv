@@ -250,15 +250,25 @@
             font-weight: bold;
         }
 
-        .work-date-range {
-            margin-top: 0.5em;
+        .project-header {
+            margin-top: 1.25em;
+            margin-bottom: -0.75em;
         }
 
-        .work-date-range .fa-calendar {
+        .project-header .project-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .work-date-range {
+            float: right;
+        }
+
+        .fa-calendar {
             margin-right: 1rem;
         }
 
-        .work-date-range .fa-long-arrow-right {
+        .fa-long-arrow-right {
             transform: scale(0.7);
             margin: auto 1rem;
         }
@@ -327,11 +337,55 @@
                     <li>
                         <div class="company">
                             <span class="company-name">STX Next</span>&nbsp;&nbsp;<span class="position">as Python developer</span>
-                            <div class="work-date-range"><i class="fa fa-calendar"></i>October 2021<i
-                                    class="fa fa-long-arrow-right"></i>April 2022
+                            <div class="work-date-range">October 2021<i
+                                    class="fa fa-long-arrow-right"></i>Now
                             </div>
                         </div>
-                        About project
+
+                        <div class="project-header"><span class="project-name">User management portal</span>
+                            <div class="work-date-range">April 2021<i
+                                    class="fa fa-long-arrow-right"></i>October 2022
+                            </div>
+                        </div>
+
+
+                        <p class="about-project">
+                            The project involved the development of a user management portal to be used exclusively by
+                            internal users. The platform was highly integrated with Auth0, and exposes a range of
+                            Auth0 features designed to be used by non-technical users. The primary goal of the platform
+                            was to streamline the process of managing users, simplifying and optimizing user
+                            management operations.</p>
+
+                        <div class="project-header"><span class="project-name">Duties</span></div>
+
+                        <p class="task-description">
+                            Implementing a service responsible for permissioning users, based on configuration defined
+                            by admin staff
+                        </p>
+                        <p class="task-description">
+                            Designing architecture of the service, following DDD patterns
+                        </p>
+                        <p class="task-description">
+                            Implementing local development environment
+                        </p>
+                        <p class="task-description">
+                            Following TDD practices, and as a result creating readable, well tested code
+                        </p>
+                        <p class="task-description">
+                            Solving problems with concurrent access to shared resources
+                        </p>
+                        <p class="task-description">
+                            Integrating with Auth0 platform
+                        </p>
+                        <p class="task-description">
+                            Overcoming problems with malfunctioning external systems
+                        </p>
+
+                        <div class="project-header"><span class="project-name">Communication platform for MBA students</span>
+                            <div class="work-date-range">April 2021<i
+                                    class="fa fa-long-arrow-right"></i>October 2022
+                            </div>
+                        </div>
                         <p class="about-project">
                             Contributed to the development of a sophisticated communication platform designed to
                             facilitate networking and collaboration between students at MBA schools. The platform
@@ -340,8 +394,7 @@
                             providing a solid foundation for communication on various topics of common interest, the
                             platform has been instrumental in promoting collaboration and knowledge-sharing among
                             users.</p>
-
-                        Duties
+                        <div class="project-header"><span class="project-name">Duties</span></div>
                         <p class="task-description">
                             Designing and implementing a robust polling feature, integrated into the core chat
                             functionality, to facilitate efficient and effective decision-making among users on a
@@ -363,6 +416,7 @@
                             Conducting debugging and troubleshooting efforts to address memory leaks, ensuring the
                             smooth and reliable functioning of the platform
                         </p>
+
                     </li>
                     <li>
                         <div class="company">
@@ -405,7 +459,6 @@
                             Implemented MES system for client using Indigo framework.
                         </p>
                     </li>
-
                     <li>
                         <div class="company">
                             <span class="company-name">Straal</span>&nbsp;&nbsp;<span class="position">as Python developer</span>
@@ -420,7 +473,6 @@
                             Maintained, fixed and tested a large distributed python web application.
                         </p>
                     </li>
-
                     <li>
                         <div class="company">
                             <span class="company-name">eStoreMedia</span>&nbsp;&nbsp;<span class="position">as Django developer</span>
@@ -463,7 +515,6 @@
                         </p>
 
                     </li>
-
                     <li>
                         <div class="company">
                             <span class="company-name">Anfa Kable</span>
